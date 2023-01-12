@@ -12,10 +12,14 @@ constructor(
     private feedService : FeedService
 ){}
 
+// create post 
+
 @Post()
 create(@Body() post:FeedPost) : Observable<FeedPost>{
 return this.feedService.createPost(post);       
 }
+
+// afficher post
 
 @Get()
 findAll(): Observable<FeedPost[]>
@@ -23,7 +27,7 @@ findAll(): Observable<FeedPost[]>
 return this.feedService.FindAllPosts();
 }
 
-
+// update post
 @Put(':id')
 update(
     @Param('id') id:number,
@@ -33,7 +37,7 @@ update(
 return this.feedService.UpdatePost(id,feedpost);
 }
 
-
+// delete post 
 @Delete(':id')
 deletepost(@Param('id') id:number): Observable<DeleteResult>
 {
