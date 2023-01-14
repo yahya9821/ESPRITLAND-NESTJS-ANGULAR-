@@ -27,7 +27,7 @@ findAll(): Observable<FeedPost[]>
 return this.feedService.FindAllPosts();
 }
 
-// update post
+// update feed post
 @Put(':id')
 update(
     @Param('id') id:number,
